@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Naive Method</th>
+                <th>Efficient Method</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cost in costs %}
+                <tr>
+                    <th>Computational Time for k={{ cost.k }} </th>
+                    <td>{{ cost.naive}}</td>
+                    <td>{{ cost.efficient }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+
+    <!--  k naive  efficient -->   
+    <!-- time   -->
