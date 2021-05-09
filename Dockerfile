@@ -6,12 +6,13 @@ COPY ./assignment /assignment
 COPY ./requirements.txt /requirements.txt
 
 #install dependencies
-RUN pip install -r /requirements.txt
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
 WORKDIR /assignment
 
 #unit test
 CMD python -m unittest main.py
 #run django server
-RUN pipenv shell
-CMD pyhton manage.py runserver
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

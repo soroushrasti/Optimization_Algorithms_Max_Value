@@ -23,6 +23,12 @@ For the front-end application I have used Django. For running the web applicatio
 <a name='docker'></a>
 ## Docker
 In order to put the API into a complete black box, I need to build a docker image with it. The following paragraphs tell you how to create it, then run and test it, and finally stop/remove it. 
+For running the container, you just need:
+```
+docker build -t backend_image .
+docker run -it -p8001:8000 backend_image
+```
+Then, in browser, visit `https://0.0.0.0:8001`
 
 Before we build our docker image, let's assert that the folder structure is correct.
 The API has to be implemented in the `assignment/main.py` file, while the `Dockerfile` is in the root (parent) folder.
